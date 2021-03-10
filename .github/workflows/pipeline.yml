@@ -43,9 +43,11 @@ jobs:
           heroku_email: "fabiane@disroot.org"
           branch: "master"
           remote_branch: "master"
-          healthcheck: "https://cicddeploymeny.herokuapp.com/health"
-          checkstring: "ok"
-          rollbackonhealthcheckfailed: true
+#          healthcheck: "https://cicddeploymeny.herokuapp.com/health"
+#          checkstring: "ok"
+#          rollbackonhealthcheckfailed: true
+
+
 
 
 
