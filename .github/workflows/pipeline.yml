@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: master
+    types: [opened, synchronize]
 
 jobs:
   pipeline:
@@ -42,6 +45,8 @@ jobs:
           remote_branch: "master"
           healthcheck: "https://cicddeploymeny.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
+
 
 
         
