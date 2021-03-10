@@ -5,7 +5,7 @@ on:
     branches:
       - master
   pull_request:
-    branches: master
+    branches: [master]
     types: [opened, synchronize]
 
 jobs:
@@ -36,6 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       - id: deploy
         name: deploy
+        if: ${{ github.event.name == 'push'}}
         uses: akhileshns/heroku-deploy@v3.10.9
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -43,9 +44,16 @@ jobs:
           heroku_email: "fabiane@disroot.org"
           branch: "master"
           remote_branch: "master"
-          healthcheck: "https://cicddeploymeny.herokuapp.com/health"
-          checkstring: "ok"
-          rollbackonhealthcheckfailed: true
+      #          healthcheck: "https://cicddeploymeny.herokuapp.com/health"
+      #          checkstring: "ok"
+      #          rollbackonhealthcheckfailed: true
+      - name: Bump version and push tag
+        if: ${{ github.event.name == 'push'}}
+        uses: anothrNick/github-tag-action@1.33.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
 
 
 
