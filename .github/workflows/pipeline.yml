@@ -47,6 +47,12 @@ jobs:
 #          healthcheck: "https://cicddeploymeny.herokuapp.com/health"
 #          checkstring: "ok"
 #          rollbackonhealthcheckfailed: true
+      - name: Bump version and push tag
+        if: ${{ github.event.name == 'push'}}
+        uses: anothrNick/github-tag-action@1.33.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
