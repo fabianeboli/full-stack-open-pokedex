@@ -44,7 +44,7 @@ jobs:
           heroku_email: "fabiane@disroot.org"
           branch: "master"
           remote_branch: "master"
-      #          healthcheck: "https://cicddeploymeny.herokuapp.com/health"
+      #          healthcheck: "https://cicddeploymeny.herokuapp.com/health" g
       #          checkstring: "ok"
       #          rollbackonhealthcheckfailed: true
       - name: Bump version and push tag
