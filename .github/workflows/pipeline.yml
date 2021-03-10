@@ -41,6 +41,7 @@ jobs:
           branch: "master"
           remote_branch: "master"
           healthcheck: "https://cicddeploymeny.herokuapp.com/health"
+          checkstring: "ok"
 
 
         

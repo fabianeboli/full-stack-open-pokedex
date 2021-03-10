@@ -20,7 +20,9 @@
     "fullstack-open"
   ],
   "jest": {
-    "testPathIgnorePatterns": ["cypress"]
+    "testPathIgnorePatterns": [
+      "cypress"
+    ]
   },
   "author": "Smartly.io",
   "license": "ISC",
